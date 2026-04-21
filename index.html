@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bautizados IPUH Las Lomas - Abril 2026</title>
+    
+    <!-- Google Fonts para tipografía elegante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           VARIABLES DE DISEÑO (TEMA OSCURO Y ELEGANTE)
+           ========================================================================== */
+        :root {
+            /* Paleta cromática basada en jerarquía, elegancia y reverencia */
+            --color-bg: #06090e;         /* Fondo principal muy oscuro, casi negro con tono azulado */
+            --color-surface: #0d131c;    /* Superficies para tarjetas o modales */
+            --color-surface-hover: #151e2b;
+            --color-accent: #cda45e;     /* Estilo dorado suave para resaltar sin ser estridente */
+            --color-accent-light: #e5c58a;
+            --color-text-main: #f0f2f5;  /* Blanco suave para lectura larga */
+            --color-text-muted: #9ba6b5; /* Gris azulado para textos secundarios */
+            
+            /* Tipografía */
+            --font-headings: 'Cormorant Garamond', serif; /* Solemne y clásica */
+            --font-body: 'Outfit', sans-serif;            /* Limpia y contemporánea */
+            
+            /* Espaciados y estructura */
+            --nav-height: 80px;
+            --container-w: 1200px;
+            --radius: 8px;
+            --transition-smooth: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* ==========================================================================
+           RESETEO BASE
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-headings);
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-w);
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .text-accent {
+            color: var(--color-accent);
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--color-text-main);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: var(--color-accent);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* ==========================================================================
+           NAVEGACIÓN (HEADER STICKY)
+           ========================================================================== */
+        header.nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            z-index: 1000;
+            transition: var(--transition-smooth);
+            background: rgba(6, 9, 14, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        header.nav-header.scrolled {
+            height: 70px;
+            background: rgba(6, 9, 14, 0.95);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            max-width: var(--container-w);
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .brand-logo img {
+            height: 50px;
+            object-fit: contain;
+            transition: var(--transition-smooth);
+        }
+        
+        .scrolled .brand-logo img {
+            height: 40px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-text-muted);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-accent);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-accent);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Menú Hamburguesa */
+        .mobile-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: var(--transition-smooth);
+        }
+
+        /* ==========================================================================
+           HERO PRINCIPAL
+           ========================================================================== */
+        .hero-section {
+            height: 100vh;
+            min-height: 600px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: var(--nav-height);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(6, 9, 14, 0.7) 0%, rgba(6, 9, 14, 0.4) 50%, rgba(6, 9, 14, 0.95) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 0 5%;
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 300;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            line-height: 1.1;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border: 1px solid var(--color-accent);
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--color-accent);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-accent);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-accent);
+            color: #000;
+        }
+
+        /* ==========================================================================
+           SECCIÓN: EL BAUTISMO (DOCTRINA)
+           ========================================================================== */
+        .doctrina-section {
+            background-color: var(--color-bg);
+            position: relative;
+        }
+
+        .doctrina-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .doctrina-img-wrap {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        
+        .doctrina-img-wrap::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 1px solid rgba(205, 164, 94, 0.3);
+            border-radius: var(--radius);
+            pointer-events: none;
+        }
+
+        .doctrina-img-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.7s ease;
+        }
+
+        .doctrina-img-wrap:hover img {
+            transform: scale(1.03);
+        }
+
+        .doctrina-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text-main);
+        }
+
+        .doctrina-text p {
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* ==========================================================================
+           SECCIÓN: VIDEO DEL EVENTO
+           ========================================================================== */
+        .video-section {
+            background-color: var(--color-surface);
+            border-top: 1px solid rgba(255,255,255,0.02);
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.05);
+            background: #000;
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        .video-intro {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* ==========================================================================
+           CARRUSELES (MOMENTOS Y ÁLBUM)
+           ========================================================================== */
+        .carousel-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Firefox */
+            padding: 1rem 5%;
+            scroll-behavior: smooth;
+        }
+
+        .carousel-track::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .carousel-card {
+            flex: 0 0 300px;
+            scroll-snap-align: center;
+            border-radius: var(--radius);
+            overflow: hidden;
+            cursor: zoom-in;
+            position: relative;
+            background-color: var(--color-surface);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.03);
+            transition: var(--transition-smooth);
+        }
+
+        .carousel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            border-color: rgba(205, 164, 94, 0.3);
+        }
+
+        /* Aspect ratio 3:4 para fotos verticales */
+        .carousel-card-img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .card-moment .carousel-card-img {
+            /* Fotos de momentos (pueden ser ligeramente más horizontales u otro formato, lo forzamos a cubrir bien) */
+            aspect-ratio: 4/5;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            background-color: rgba(6, 9, 14, 0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition-smooth);
+            font-size: 1.2rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--color-accent);
+            color: #000;
+            border-color: var(--color-accent);
+        }
+
+        .prev-btn { left: 2%; }
+        .next-btn { right: 2%; }
+
+        /* ==========================================================================
+           MENSAJE FINAL
+           ========================================================================== */
+        .cierre-section {
+            background-image: linear-gradient(to top, rgba(6, 9, 14, 1), rgba(6, 9, 14, 0.9)), url('Resources/WhatsApp Image 2026-04-20 at 12.21.10.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            padding: 120px 5%;
+        }
+
+        .cierre-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(13, 19, 28, 0.85);
+            padding: 4rem 3rem;
+            border-radius: var(--radius);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(205, 164, 94, 0.2);
+        }
+
+        .logo-cierre {
+            width: 60px;
+            margin: 0 auto 2rem;
+            opacity: 0.8;
+        }
+
+        .cierre-box h3 {
+            font-size: 2.2rem;
+            color: var(--color-text-main);
+            margin-bottom: 1rem;
+        }
+
+        .cierre-box p {
+            color: var(--color-text-muted);
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        footer {
+            background-color: #030508;
+            padding: 4rem 5% 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: var(--container-w);
+            margin: 0 auto;
+        }
+
+        .footer-brand img {
+            width: 120px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links h4 {
+            color: #fff;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: rgba(255,255,255,0.4);
+            font-size: 0.8rem;
+        }
+
+        /* ==========================================================================
+           LIGHTBOX MODAL
+           ========================================================================== */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 4px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox.active .lightbox-img {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover {
+            color: var(--color-accent);
+        }
+
+        /* ==========================================================================
+           ANIMACIONES & RESPONSIVE
+           ========================================================================== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Utilidad para animar elementos al hacer scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 991px) {
+            .hero-title { font-size: 3rem; }
+            .doctrina-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .doctrina-text p { margin-left: auto; margin-right: auto; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--color-surface);
+                flex-direction: column;
+                justify-content: center;
+                transition: 0.4s ease-in-out;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+                z-index: 1001;
+            }
+
+            .mobile-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+            .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+            .mobile-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+            .hero-title { font-size: 2.5rem; }
+            .hero-content { padding-top: 4rem; }
+            .btn { display: block; width: 100%; margin: 1rem 0 0 0; }
+            .section-title { font-size: 2rem; }
+            .carousel-btn { display: none; } /* Ocultar flechas en móvil, usar scroll táctil */
+            .cierre-box { padding: 3rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= NAVEGACIÓN ================= -->
+    <header class="nav-header" id="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="brand-logo">
+                <!-- Mostramos el logo institucional -->
+                <img src="Resources/Logo IPUH Las Lomas.png" alt="IPUH Las Lomas Logo" onerror="this.style.display='none'">
+            </a>
+            
+            <div class="mobile-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#doctrina" class="nav-link">El Bautismo</a>
+                <a href="#video" class="nav-link">Revive el Evento</a>
+                <a href="#momentos" class="nav-link">Momentos</a>
+                <a href="#album" class="nav-link">Álbum</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero-section" id="inicio">
+        <div class="hero-bg">
+            <img src="Resources/WhatsApp Image 2026-04-20 at 12.21.10.jpeg" alt="Foto Grupal Bautizados Abril 2026">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-subtitle">Ceremonia Solemne</span>
+            <h1 class="hero-title">Bautizados de IPUH Las Lomas<br>Abril 2026</h1>
+            <p class="hero-desc">Una celebración del nuevo nacimiento en Cristo. Un paso de obediencia, fe y transformación en presencia de la comunidad.</p>
+            <div class="hero-actions">
+                <a href="#album" class="btn btn-primary">Ver Bautizados</a>
+                <a href="#video" class="btn btn-outline">Ver Video</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= EL BAUTISMO (DOCTRINA) ================= -->
+    <section class="doctrina-section section-padding reveal" id="doctrina">
+        <div class="container">
+            <div class="doctrina-grid">
+                <div class="doctrina-text">
+                    <span class="text-accent" style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Fundamento Bíblico</span>
+                    <h3>La Autoridad sobre el Engaño</h3>
+                    <p>El bautismo en aguas es un acto sagrado de obediencia y testimonio público. Representa la muerte del viejo hombre, sepultando la antigua manera de vivir, y la resurrección a una nueva vida en Cristo Jesús.</p>
+                    <p>Es un paso de fe que declara nuestra redención, identificándonos con el sacrificio de nuestro Señor, y marcando nuestro compromiso inquebrantable de Caminar en Verdad.</p>
+                </div>
+                <div class="doctrina-img-wrap">
+                    <img src="Resources/El Bautismo - La autoridad sobre el engaño.png" alt="Concepto Doctrinal El Bautismo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= VIDEO DEL EVENTO ================= -->
+    <section class="video-section section-padding reveal" id="video">
+        <div class="container">
+            <div class="video-intro">
+                <h2 class="section-title">Revive el Evento</h2>
+                <p class="text-muted">Revive la ceremonia de pacto de aquellos que rindieron sus vidas al Señor este abril 2026.</p>
+            </div>
+            
+            <div class="video-container">
+                <video controls poster="Resources/WhatsApp Image 2026-04-20 at 12.21.10.jpeg">
+                    <source src="Resources/WhatsApp Video 2026-04-20 at 12.21.17.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CARRUSEL: MOMENTOS ================= -->
+    <section class="carousel-section section-padding reveal" id="momentos">
+        <div class="container" style="max-width: 100%;">
+            <h2 class="section-title">Momentos del Bautismo</h2>
+            
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev-btn" id="prev-momentos" aria-label="Anterior">&#10094;</button>
+                <div class="carousel-track" id="track-momentos">
+                    <!-- Iteración de imágenes de Momentos -->
+                    <div class="carousel-card card-moment" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.29.53.jpeg" class="carousel-card-img" alt="Momento"></div>
+                    <div class="carousel-card card-moment" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.29.53-01.jpeg" class="carousel-card-img" alt="Momento"></div>
+                    <div class="carousel-card card-moment" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.29.53-02.jpeg" class="carousel-card-img" alt="Momento"></div>
+                    <div class="carousel-card card-moment" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.29.54.jpeg" class="carousel-card-img" alt="Momento"></div>
+                    <div class="carousel-card card-moment" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.29.54-03.jpeg" class="carousel-card-img" alt="Momento"></div>
+                    <div class="carousel-card card-moment" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.29.54-04.jpeg" class="carousel-card-img" alt="Momento"></div>
+                    <div class="carousel-card card-moment" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.29.54-05.jpeg" class="carousel-card-img" alt="Momento"></div>
+                    <div class="carousel-card card-moment" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.29.55.jpeg" class="carousel-card-img" alt="Momento"></div>
+                    <div class="carousel-card card-moment" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.29.55-01.jpeg" class="carousel-card-img" alt="Momento"></div>
+                    <div class="carousel-card card-moment" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.29.55-02.jpeg" class="carousel-card-img" alt="Momento"></div>
+                    <div class="carousel-card card-moment" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.29.55-03.jpeg" class="carousel-card-img" alt="Momento"></div>
+                    <div class="carousel-card card-moment" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.29.55-04.jpeg" class="carousel-card-img" alt="Momento"></div>
+                    <div class="carousel-card card-moment" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.29.55-05.jpeg" class="carousel-card-img" alt="Momento"></div>
+                </div>
+                <button class="carousel-btn next-btn" id="next-momentos" aria-label="Siguiente">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CARRUSEL: ÁLBUM DE BAUTIZADOS ================= -->
+    <section class="carousel-section section-padding reveal" id="album" style="background-color: var(--color-surface); border-top: 1px solid rgba(255,255,255,0.02);">
+        <div class="container" style="max-width: 100%;">
+            <h2 class="section-title">Álbum de Bautizados</h2>
+            <p style="text-align: center; color: var(--color-text-muted); margin-top: -1.5rem; margin-bottom: 2rem;">Nueva Vida en Cristo</p>
+            
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev-btn" id="prev-album" aria-label="Anterior">&#10094;</button>
+                <div class="carousel-track" id="track-album">
+                    <!-- Iteración de imágenes del Álbum (Carteles) -->
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.22.29.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.22.29-01.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.22.30.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.22.30-01.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.22.30-02.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.22.30-03.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.22.30-04.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.22.30-05.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.22.31.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.22.31-06.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.22.31-07.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.27.07.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.27.08.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.27.08-01.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.27.08-02.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.27.08-03.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                    <div class="carousel-card" onclick="openLightbox(this.querySelector('img').src)"><img src="Resources/WhatsApp Image 2026-04-20 at 12.27.08-04.jpeg" class="carousel-card-img" alt="Bautizado"></div>
+                </div>
+                <button class="carousel-btn next-btn" id="next-album" aria-label="Siguiente">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CIERRE ================= -->
+    <section class="cierre-section reveal">
+        <div class="cierre-box">
+            <!-- Icono decorativo o Logo pequeño -->
+            <img src="Resources/Logo IPUH Las Lomas.png" alt="Icono" class="logo-cierre" onerror="this.style.display='none'">
+            <h3>Una iglesia unida en Su nombre</h3>
+            <p>"Por tanto, id, y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo."</p>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="Resources/Logo IPUH Las Lomas.png" alt="IPUH Las Lomas" onerror="this.style.display='none'">
+                <p>Nuestra misión es predicar el evangelio de salvación, bautizando y formando creyentes para la gloria de Dios.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#doctrina">El Bautismo</a></li>
+                    <li><a href="#video">Video Principal</a></li>
+                    <li><a href="#album">Álbum de Bautizados</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Comunidad</h4>
+                <!-- Enlace real facilitado -->
+                <ul>
+                    <li><a href="https://www.facebook.com/profile.php?id=61587228733953" target="_blank" rel="noopener noreferrer">Síguenos en Facebook</a></li>
+                    <li><a href="#">Sede Las Lomas</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 IPUH Las Lomas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ================= LIGHTBOX (MODAL) ================= -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+            <img src="" alt="Vista ampliada" class="lightbox-img" id="lightbox-img">
+        </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT PURO ================= -->
+    <script>
+        // 1. HEADER STICKY & SCROLL SPY (Resaltado del menú)
+        const header = document.getElementById('navbar');
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            // Header Sticky
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // Scroll Spy
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // 2. MENÚ RESPONSIVE (Móvil)
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer click en enlace (móvil)
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // 3. CARRUSELES LOGIC (Scroll horizontal con flechas)
+        function setupCarousel(trackId, prevBtnId, nextBtnId) {
+            const track = document.getElementById(trackId);
+            const prevBtn = document.getElementById(prevBtnId);
+            const nextBtn = document.getElementById(nextBtnId);
+            
+            if(!track || !prevBtn || !nextBtn) return;
+
+            const scrollAmount = 320; // Ancho de tarjeta + gap aprox
+
+            nextBtn.addEventListener('click', () => {
+                track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+
+            prevBtn.addEventListener('click', () => {
+                track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+        }
+
+        setupCarousel('track-momentos', 'prev-momentos', 'next-momentos');
+        setupCarousel('track-album', 'prev-album', 'next-album');
+
+        // 4. LIGHTBOX / MODAL DE IMÁGENES
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Evitar scroll de la página de fondo
+        }
+
+        function closeLightbox(e) {
+            // Si el click fue en el contenedor (fondo) o en la X, cerramos.
+            lightbox.classList.remove('active');
+            setTimeout(() => {
+                lightboxImg.src = '';
+            }, 300);
+            document.body.style.overflow = 'auto'; // Restaurar scroll
+        }
+
+        // Evitar que ESC cierre si está abierto
+        document.addEventListener('keydown', (e) => {
+            if(e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox(e);
+            }
+        });
+
+        // 5. REVEAL ANIMATIONS ON SCROLL (Animaciones suaves)
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Solo animar una vez
+                }
+            });
+        };
+
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+        
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+
+    </script>
+</body>
+</html>
